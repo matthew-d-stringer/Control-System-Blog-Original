@@ -1,24 +1,61 @@
-# Chapter 2: State-Space Representation of Dynamic Systems
+# Introduction to System Modeling using Differential Equations
 
-## 2.1 Mathematical Models
+## Intro
 
 Mathematical Models are fundamental to the design of feedback control systems.
-Controls systems engineers rely on accurate mathematical models in order
-to properly understand how a system behaves, and in order to design optimal 
+Control systems engineers rely on accurate mathematical models in order
+to properly understand how a system behaves, and to design optimal 
 feedback mechanisms.
 Mathematical models of systems are most often represented by differential equations.
-Thus, the analysis of control algorithms is often identical to the analysis
+Thus, the analysis of control algorithms is frequently identical to the analysis
 of differential equations.
 
 There are two modeling and analysis approaches in use for linear systems: 
 frequency-domain approach, and state-space approach. 
-Both of these methods rely on techniques taught in an Ordinary Differential 
+Both of these methods are based on concepts taught in an Ordinary Differential 
 Equations class.
-This chapter will primarly focus on creating state-space models of systems, 
-while chapter 4 will focus on the frequency-domain approach.
+This section will primarily focus on creating models of systems using the 
+state-space approach.
 
-The state-space representation of dyamical systems relies on representing creating
-models that are systems of first-order differential equations.
+## What makes up a differential equation
+A differential equation is an equation consisting of function $y(t)$ and its
+derivatives. 
+$$
+y^{(n)}(t) = f\left(t, y(t), y'(t), \cdots, y^{(n-1)}(t)\right).
+$$
+In mechanical systems, these functions often correspond to position ($x$), 
+velocity ($v$) and acceleration ($a$), where
+$$
+v(t) = \frac{d}{dt}x(t) \text{ \quad and \quad } a(t) = \frac{d}{dt}v(t).
+$$
+However, this may not be the case. 
+In more complicated systems, a model may consist of a system of differential
+equations. 
+If the model consists of two functions, $y_1, y_2$, then it will take the form:
+$$
+y_1^{(n)}(t) = f\left(
+    t, 
+    y_1(t), y_1'(t), \cdots, y_1^{(n-1)}(t), 
+    y_2(t), y_2'(t), \cdots, y_2^{(n-1)}(t)
+\right),
+$$
+$$
+y_2^{(n)}(t) = g\left(
+    t, 
+    y_1(t), y_1'(t), \cdots, y_1^{(n-1)}(t), 
+    y_2(t), y_2'(t), \cdots, y_2^{(n-1)}(t)
+\right).
+$$
+The functions $y_1, y_1', \dots, y_1^{(n-1)}, y_2, y_2', \dots, y_2^{(n-1)}$
+are called the *state* of the system. 
+This is because knowing the values of these at a specific time 
+allow you predict the future behavior of the system (assuming you know the dynamics).
+You may notice that $y_1^{(n)}, y_2^{(n)}$ are considered state variables. 
+This is because the 
 
-## Physical Notion of System State
+As you may notice, these are pretty general, and unfortunately, mathematicians
+have yet to determine general solutions for any of these.
+Thus, for our purposes, we will instead look at a simpler form of model,
+the Linear-Time-Invarient (LTI) System.
 
+## The Linear-Time-Invarient System
