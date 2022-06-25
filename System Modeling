@@ -56,6 +56,6 @@ This is because the
 As you may notice, these are pretty general, and unfortunately, mathematicians
 have yet to determine general solutions for any of these.
 Thus, for our purposes, we will instead look at a simpler form of model,
-the Linear-Time-Invarient (LTI) System.
+the Linear Time-Invarient (LTI) System.
 
-## The Linear-Time-Invarient System
+## The Linear Time-Invarient System
