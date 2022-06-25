@@ -1,0 +1,24 @@
+# Chapter 2: State-Space Representation of Dynamic Systems
+
+## 2.1 Mathematical Models
+
+Mathematical Models are fundamental to the design of feedback control systems.
+Controls systems engineers rely on accurate mathematical models in order
+to properly understand how a system behaves, and in order to design optimal 
+feedback mechanisms.
+Mathematical models of systems are most often represented by differential equations.
+Thus, the analysis of control algorithms is often identical to the analysis
+of differential equations.
+
+There are two modeling and analysis approaches in use for linear systems: 
+frequency-domain approach, and state-space approach. 
+Both of these methods rely on techniques taught in an Ordinary Differential 
+Equations class.
+This chapter will primarly focus on creating state-space models of systems, 
+while chapter 4 will focus on the frequency-domain approach.
+
+The state-space representation of dyamical systems relies on representing creating
+models that are systems of first-order differential equations.
+
+## Physical Notion of System State
+
