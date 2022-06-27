@@ -3,10 +3,8 @@
 ## Intro
 
 Mathematical Models are fundamental to the design of feedback control systems.
-Control systems engineers rely on accurate mathematical models in order
-to properly understand how a system behaves, and to design optimal 
-feedback mechanisms.
-Mathematical models of systems are most often represented by differential equations.
+Control systems engineers rely on accurate mathematical models to properly understand how a system behaves and design optimal feedback mechanisms.
+Differential equations most often represent mathematical models of systems.
 Thus, the analysis of control algorithms is frequently identical to the analysis
 of differential equations.
 
@@ -50,12 +48,47 @@ The functions $y_1, y_1', \dots, y_1^{(n-1)}, y_2, y_2', \dots, y_2^{(n-1)}$
 are called the *state* of the system. 
 This is because knowing the values of these at a specific time 
 allow you predict the future behavior of the system (assuming you know the dynamics).
-You may notice that $y_1^{(n)}, y_2^{(n)}$ are considered state variables. 
-This is because the 
+You may notice that $y_1^{(n)}, y_2^{(n)}$ are not considered state variables. 
+This is because these values can be solved for by knowing the other values.
 
-As you may notice, these are pretty general, and unfortunately, mathematicians
-have yet to determine general solutions for any of these.
+As you may notice, these forms of differential equations are pretty general, 
+and unfortunately, mathematicians have yet to determine general solutions for 
+any of these.
 Thus, for our purposes, we will instead look at a simpler form of model,
 the Linear Time-Invarient (LTI) System.
 
 ## The Linear Time-Invarient System
+
+LTI systems are differential equations with two constraints: 
+Linearity (aka superposition), and Time-invarience.
+
+Time-invarience means that whenever the system has a specific state, it will
+always behave the same regardless of the specific time.
+In other words, time-invarience means that time does not affect the dynamics of
+the system.
+
+Linearity means that given any two particular solutions 
+$$y_1 = f(t) \text{\quad and \quad} y_2 = g(t)$$,
+the following are also solutions to the system
+$$f(t) + g(t) \text{\quad and \quad} cf(t).$$
+
+In effect, these conditions restrict the form of the differential equations:
+$$
+y^{(n)}(t) = \alpha_1 y(t) + \alpha_2 y'(t) + \cdots + \alpha_{n-1} y^{(n-1)}(t),
+$$
+where $\alpha_i$ are constants.
+For systems of differential equations, the form is similar:
+$$
+y_1^{(n)}(t) = 
+    \alpha_{11} y_1(t) + \alpha_{12} y_1'(t) + \cdots + \alpha_{1(n-1)} y_1^{(n-1)}(t) 
+    + \\
+    \alpha_{21} y_2(t) + \alpha_{22} y_2'(t) + \cdots + \alpha_{2(n-1)} y_2^{(n-1)}(t)
+    ,
+$$
+$$
+y_2^{(n)}(t) = 
+    \alpha_{11} y_1(t) + \alpha_{12} y_1'(t) + \cdots + \alpha_{1(n-1)} y_1^{(n-1)}(t) 
+    + \\
+    \alpha_{21} y_2(t) + \alpha_{22} y_2'(t) + \cdots + \alpha_{2(n-1)} y_2^{(n-1)}(t)
+    .
+$$
